@@ -1,7 +1,6 @@
 version: "3.8"
 
 services:
-
   nginx:
     build: ./nginx
     image: nginx
@@ -13,7 +12,6 @@ services:
       - flask-app
     networks:
       - task-net
-
   mysql:
     image: mysql:latest
     container_name: mysql-cont
@@ -49,8 +47,7 @@ services:
     networks:
       - task-net
     restart: always
-
-  prometheus:
+    prometheus:
     image: prom/prometheus:latest
     container_name: prometheus-cont
     ports:
